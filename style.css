@@ -1,0 +1,263 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #6a0dad, #8a2be2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #f9f9f9;
+}
+
+/* Container Styling */
+.container {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Task Input Styling */
+.task-input-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-label {
+    width: 100%;
+    font-weight: bold;
+    color: #ddd;
+    margin-bottom: 5px;
+}
+
+#task-input,
+#due-date {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #333;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    
+}
+
+.priority-icons {
+    display: flex;
+    gap: 5px;
+}
+
+.priority-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+    color: #fff;
+}
+
+.priority-btn.low { background-color: #b19cd9; }     /* Light Purple */
+.priority-btn.medium { background-color: #9370db; }  /* Medium Purple */
+.priority-btn.high { background-color: #8a2be2; }    /* Darker Purple */
+
+
+.priority-btn:hover {
+    transform: scale(1.1);
+}
+
+.add-task-btn {
+    flex-basis: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    color: white;
+    background-color: #7b68ee;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.add-task-btn:hover {
+    background-color: #9370db;
+}
+
+/* Filter Buttons */
+.filter-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.filter-btn {
+    padding: 8px 15px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #6a0dad;
+}
+
+/* Task List Styling */
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: #fff;
+}
+
+.task-checkbox {
+    margin-right: 10px;
+}
+
+.task-item.completed {
+    text-decoration: line-through;
+    color: #ccc;
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: #ff5c5c;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.delete-btn:hover {
+    background-color: darkred; /* Darker color on hover */
+    border-radius: 10px;
+}
+
+/* Priority Filter Styling */
+.hamburger-menu {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+#hamburger-span {
+    font-size: 0.7rem;
+    font-style: italic;
+}
+
+.filter {
+    padding: 8px 15px;
+    margin: 3px;
+    color: #ccc;
+    background-color: #6a0dad;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter:hover {
+    background-color: rgb(76, 7, 126);
+}  
+
+.filter-options {
+    display: none;
+    flex-direction: column;
+    background: rgb(228, 224, 224);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.hamburger-menu:hover .filter-options {
+    display: flex;
+}
+
+.hamburger-menu:hover #hamburger-span {
+    display: none;
+}
+
+
+/* Delete Confirmation Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-content {
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    color: black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content button {
+    margin: 5px;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#confirm-delete {
+    background-color: #ff5c5c;
+    border: none;
+    color: white;
+}
+
+#cancel-delete {
+    background-color: #6a0dad;
+    border: none;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .task-input-container {
+        flex-direction: column;
+    }
+
+    #task-input, #due-date {
+        width: 95%;
+    }
+
+    .add-task-btn {
+        width: 100%;
+    }
+}
