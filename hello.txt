@@ -1,2 +1,2 @@
 Hello World
-Commit from Vscode
+Commit from Git Bash
